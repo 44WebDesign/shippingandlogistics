@@ -1,0 +1,2530 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShippingAndLogistics.co.uk — Global Freight & Shipping Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   DESIGN TOKENS — Swiss Industrial + Maritime Power
+   Philosophy: Swiss/International Typographic x Industrial
+   Primary: Deep Navy | Accent: Signal Orange | Neutral: Slate
+   ============================================================ */
+:root {
+  --c-navy-950: #091428;
+  --c-navy-900: #0F2044;
+  --c-navy-800: #163060;
+  --c-navy-700: #1E407C;
+  --c-navy-600: #2A539E;
+  --c-navy-100: #C8D6F0;
+  --c-navy-50:  #EBF0FA;
+
+  --c-orange-600: #E8430A;
+  --c-orange-500: #F05A1F;
+  --c-orange-400: #FF7040;
+  --c-orange-100: #FDE8DF;
+  --c-orange-50:  #FEF4F0;
+
+  --c-slate-900: #1A1E2A;
+  --c-slate-700: #3A4055;
+  --c-slate-500: #6B7280;
+  --c-slate-300: #C4C8D4;
+  --c-slate-100: #F0F1F5;
+  --c-slate-50:  #F8F9FC;
+
+  --c-white: #FFFFFF;
+  --c-success: #0D6E4A;
+
+  /* Semantic */
+  --color-bg:           var(--c-white);
+  --color-bg-secondary: var(--c-slate-50);
+  --color-bg-dark:      var(--c-navy-900);
+  --color-text:         var(--c-slate-900);
+  --color-text-muted:   var(--c-slate-500);
+  --color-accent:       var(--c-orange-600);
+  --color-accent-hover: var(--c-orange-500);
+  --color-primary:      var(--c-navy-800);
+  --color-border:       var(--c-slate-300);
+
+  /* Typography */
+  --font-display: 'Bebas Neue', Impact, sans-serif;
+  --font-body:    'DM Sans', sans-serif;
+
+  /* Type Scale */
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.25rem;
+  --text-2xl:  1.5rem;
+  --text-3xl:  1.875rem;
+  --text-4xl:  2.25rem;
+  --text-5xl:  3rem;
+  --text-6xl:  3.75rem;
+  --text-7xl:  4.5rem;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* Shadow */
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md:  0 4px 12px rgba(0,0,0,0.10), 0 2px 4px rgba(0,0,0,0.06);
+  --shadow-lg:  0 16px 40px rgba(0,0,0,0.14), 0 4px 12px rgba(0,0,0,0.06);
+  --shadow-xl:  0 32px 64px rgba(0,0,0,0.18);
+
+  /* Motion */
+  --dur-fast:   150ms;
+  --dur-normal: 250ms;
+  --dur-slow:   400ms;
+  --ease:       cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out:   cubic-bezier(0, 0, 0.2, 1);
+
+  /* Layout */
+  --max-w: 1200px;
+  --max-w-text: 680px;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; }
+
+a { color: inherit; text-decoration: none; }
+
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+.section-pad { padding: var(--space-24) 0; }
+
+.label-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-orange-600);
+  background: var(--c-orange-50);
+  border: 1px solid var(--c-orange-100);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+}
+
+.label-tag--light {
+  color: var(--c-orange-400);
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.12);
+}
+
+.section-heading {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-4xl), 6vw, 5.5rem);
+  font-weight: 400;
+  line-height: 1.0;
+  letter-spacing: 0.04em;
+  color: var(--c-navy-900);
+  margin-bottom: var(--space-4);
+}
+
+.section-heading--light { color: var(--c-white); }
+
+.section-sub {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  max-width: 54ch;
+  line-height: 1.7;
+}
+
+.section-sub--light { color: var(--c-navy-100); }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 14px 28px;
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--dur-normal) var(--ease);
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--c-orange-600);
+  color: var(--c-white);
+  border-color: var(--c-orange-600);
+}
+.btn-primary:hover { background: var(--c-orange-500); border-color: var(--c-orange-500); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(232,67,10,0.35); }
+
+.btn-secondary {
+  background: transparent;
+  color: var(--c-white);
+  border-color: rgba(255,255,255,0.3);
+}
+.btn-secondary:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.6); }
+
+.btn-dark {
+  background: var(--c-navy-800);
+  color: var(--c-white);
+  border-color: var(--c-navy-800);
+}
+.btn-dark:hover { background: var(--c-navy-700); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+
+.btn-lg { padding: 18px 36px; font-size: var(--text-base); }
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: var(--space-4) 0;
+  transition: all var(--dur-normal) var(--ease);
+}
+
+.nav.scrolled {
+  background: rgba(15, 32, 68, 0.95);
+  backdrop-filter: blur(12px);
+  padding: var(--space-3) 0;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: var(--c-white);
+  letter-spacing: 0.08em;
+}
+
+.nav-logo-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--c-orange-600);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.nav-logo span { color: var(--c-orange-400); }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: rgba(255,255,255,0.75);
+  transition: color var(--dur-fast) var(--ease);
+  letter-spacing: 0.01em;
+}
+.nav-links a:hover { color: var(--c-white); }
+
+.nav-cta { margin-left: var(--space-4); }
+
+.nav-mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-2);
+  flex-direction: column;
+  gap: 5px;
+}
+
+.nav-mobile-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--c-white);
+  transition: all var(--dur-normal) var(--ease);
+}
+
+.nav-mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--c-navy-900);
+  z-index: 99;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+}
+
+.nav-mobile-menu.open { display: flex; }
+.nav-mobile-menu a { font-family: var(--font-display); font-size: 5rem; font-weight: 400; color: var(--c-white); letter-spacing: 0.06em; line-height: 1.0; }
+.nav-mobile-menu a:hover { color: var(--c-orange-400); }
+
+.nav-mobile-close {
+  position: absolute;
+  top: var(--space-6);
+  right: var(--space-6);
+  background: none;
+  border: none;
+  color: var(--c-white);
+  font-size: var(--text-2xl);
+  cursor: pointer;
+  font-family: var(--font-display);
+}
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: var(--c-navy-950);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Real photo background */
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+  /* Deep navy colour-grade: multiply the image heavily toward navy */
+  filter: brightness(0.55) saturate(0.8);
+}
+
+/* Additional navy colour wash on top of the photo */
+.hero-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(9, 20, 40, 0.52) 0%,
+      rgba(15, 32, 68, 0.35) 50%,
+      rgba(9, 20, 40, 0.50) 100%
+    );
+}
+
+/* Grid overlay — sits above photo */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.055) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+/* Animated gradient orbs — above photo, below content */
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hero-orb-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(42,83,158,0.55) 0%, transparent 70%);
+  top: -200px;
+  right: -100px;
+  animation: orbFloat 8s ease-in-out infinite;
+}
+
+.hero-orb-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(232,67,10,0.30) 0%, transparent 70%);
+  bottom: 0;
+  left: 10%;
+  animation: orbFloat 10s ease-in-out infinite reverse;
+}
+
+.hero-orb-3 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(42,83,158,0.38) 0%, transparent 70%);
+  top: 30%;
+  left: 40%;
+  animation: orbFloat 12s ease-in-out infinite;
+}
+
+@keyframes orbFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -20px) scale(1.05); }
+  66% { transform: translate(-20px, 30px) scale(0.95); }
+}
+
+/* Route lines decoration */
+.hero-route-lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.12;
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  padding: 120px 0 60px;
+}
+
+.hero-grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+
+.hero-eyebrow-line {
+  width: 40px;
+  height: 2px;
+  background: var(--c-orange-600);
+}
+
+.hero-eyebrow-text {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--c-orange-400);
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 9vw, 8rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: 0.05em;
+  color: var(--c-white);
+  margin-bottom: var(--space-6);
+}
+
+.hero-title em {
+  font-style: normal;
+  color: var(--c-orange-400);
+  display: block;
+}
+
+.hero-title em {
+  font-style: normal;
+  color: var(--c-orange-400);
+  display: block;
+}
+
+.hero-body {
+  font-size: var(--text-lg);
+  color: var(--c-navy-100);
+  line-height: 1.7;
+  margin-bottom: var(--space-8);
+  max-width: 46ch;
+}
+
+.hero-trust-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.trust-badge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: rgba(255,255,255,0.65);
+  font-weight: 400;
+}
+
+.trust-badge-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--c-orange-400);
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   QUOTE FORM CARD
+   ============================================================ */
+.quote-card {
+  background: var(--c-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+  position: relative;
+}
+
+.quote-card-header {
+  background: var(--c-orange-600);
+  padding: var(--space-5) var(--space-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.quote-card-title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  color: var(--c-white);
+  letter-spacing: 0.05em;
+  line-height: 1.0;
+}
+
+.quote-card-badge {
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: var(--c-white);
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+}
+
+.quote-form {
+  padding: var(--space-6);
+  display: grid;
+  gap: var(--space-4);
+}
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.form-group.full { grid-column: 1 / -1; }
+
+.form-label {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-slate-700);
+}
+
+.form-input, .form-select {
+  width: 100%;
+  height: 46px;
+  padding: 0 var(--space-4);
+  background: var(--c-slate-50);
+  border: 1.5px solid var(--c-slate-300);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--c-slate-900);
+  transition: border-color var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease);
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.form-select-wrap {
+  position: relative;
+}
+
+.form-select-wrap::after {
+  content: '';
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid var(--c-slate-500);
+  pointer-events: none;
+}
+
+.form-input:focus, .form-select:focus {
+  outline: none;
+  border-color: var(--c-navy-600);
+  box-shadow: 0 0 0 3px rgba(26,58,130,0.12);
+  background: var(--c-white);
+}
+
+.form-input::placeholder { color: var(--c-slate-500); }
+
+.quote-submit {
+  width: 100%;
+  height: 52px;
+  background: var(--c-orange-600);
+  color: var(--c-white);
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: all var(--dur-normal) var(--ease);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.quote-submit:hover {
+  background: var(--c-orange-500);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 28px rgba(232,67,10,0.4);
+}
+
+.quote-submit:active { transform: translateY(0); }
+
+.quote-footer {
+  padding: var(--space-3) var(--space-6) var(--space-5);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  border-top: 1px solid var(--c-slate-100);
+}
+
+.quote-footer-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--c-slate-500);
+}
+
+.quote-footer-icon { color: var(--c-success); font-size: 14px; }
+
+/* ============================================================
+   STATS TICKER
+   ============================================================ */
+.stats-ticker {
+  background: var(--c-orange-500);
+  padding: var(--space-4) 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.ticker-track {
+  display: flex;
+  gap: var(--space-16);
+  animation: tickerScroll 30s linear infinite;
+  width: max-content;
+}
+
+.ticker-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  white-space: nowrap;
+}
+
+.ticker-stat {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-display);
+  font-weight: 400;
+  color: var(--c-white);
+  letter-spacing: 0.05em;
+}
+
+.ticker-num {
+  font-size: var(--text-2xl);
+  letter-spacing: 0.04em;
+  line-height: 1.0;
+}
+
+.ticker-label {
+  font-size: var(--text-sm);
+  font-weight: 400;
+  opacity: 0.8;
+  letter-spacing: 0.02em;
+}
+
+.ticker-sep {
+  color: rgba(255,255,255,0.3);
+  font-size: var(--text-xl);
+}
+
+@keyframes tickerScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ============================================================
+   SERVICES SECTION
+   ============================================================ */
+.services { background: var(--c-slate-50); }
+
+.services-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-bottom: var(--space-12);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.service-card {
+  background: var(--c-white);
+  border: 1px solid var(--c-slate-300);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  transition: all var(--dur-normal) var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--c-orange-600);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-normal) var(--ease);
+}
+
+/* Service card top image */
+.service-card-img-wrap {
+  width: calc(100% + var(--space-8) * 2);
+  margin: calc(var(--space-8) * -1) calc(var(--space-8) * -1) var(--space-6);
+  height: 168px;
+  overflow: hidden;
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  flex-shrink: 0;
+}
+
+.service-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.9) brightness(1.0);
+  transition: transform 0.6s var(--ease), filter 0.4s var(--ease);
+}
+
+.service-card:hover .service-card-img-wrap img {
+  transform: scale(1.06);
+  filter: saturate(1.0) brightness(1.0);
+}
+
+/* legacy single-img class kept for compat */
+.service-card-img {
+  display: none;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--c-navy-100);
+}
+
+.service-card:hover::before { transform: scaleX(1); }
+
+.service-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--c-navy-50);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-5);
+  font-size: 26px;
+  transition: background var(--dur-normal) var(--ease);
+}
+
+.service-card:hover .service-icon {
+  background: var(--c-orange-50);
+}
+
+.service-title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 400;
+  color: var(--c-navy-900);
+  margin-bottom: var(--space-3);
+  letter-spacing: 0.04em;
+  line-height: 1.0;
+}
+
+.service-desc {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin-bottom: var(--space-5);
+}
+
+.service-link {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--c-orange-600);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  transition: gap var(--dur-fast) var(--ease);
+}
+
+.service-link:hover { gap: var(--space-3); }
+
+/* ============================================================
+   STATS COUNTER SECTION
+   ============================================================ */
+.stats-section {
+  background: var(--c-navy-900);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Real photo background for stats */
+.stats-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1600&q=75&auto=format&fit=crop') center/cover no-repeat;
+  filter: brightness(0.32) saturate(0.7);
+  z-index: 0;
+}
+
+.stats-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: 1;
+}
+
+.stats-section .container { position: relative; z-index: 2; }
+
+.stats-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+.stats-left .section-sub--light {
+  font-size: var(--text-base);
+  margin-bottom: var(--space-8);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-1);
+}
+
+.stat-block {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.13);
+  padding: var(--space-8);
+  border-radius: var(--radius-xl);
+  transition: background var(--dur-normal) var(--ease);
+}
+
+.stat-block:hover { background: rgba(255,255,255,0.12); }
+
+.stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5.5vw, 5rem);
+  font-weight: 400;
+  color: var(--c-white);
+  letter-spacing: 0.04em;
+  line-height: 1.0;
+  margin-bottom: var(--space-2);
+}
+
+.stat-num span { color: var(--c-orange-400); }
+
+.stat-label {
+  font-size: var(--text-sm);
+  color: var(--c-navy-100);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* ============================================================
+   HOW IT WORKS
+   ============================================================ */
+.how-it-works { background: var(--c-white); }
+
+.how-header {
+  text-align: center;
+  margin-bottom: var(--space-16);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+  position: relative;
+}
+
+.steps-grid::before {
+  display: none;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 var(--space-6);
+  position: relative;
+  z-index: 1;
+}
+
+.step-num {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--c-navy-900);
+  color: var(--c-white);
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-6);
+  border: 4px solid var(--c-white);
+  box-shadow: var(--shadow-md);
+  transition: all var(--dur-normal) var(--ease);
+}
+
+.step:hover .step-num {
+  background: var(--c-orange-600);
+  transform: scale(1.1);
+}
+
+.step-title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  color: var(--c-navy-900);
+  margin-bottom: var(--space-3);
+  letter-spacing: 0.04em;
+  line-height: 1.0;
+}
+
+.step-desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* Step image */
+.step-img-wrap {
+  width: 100%;
+  height: 140px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--space-5);
+}
+
+.step-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.9) brightness(1.02);
+  transition: transform 0.5s var(--ease), filter 0.4s var(--ease);
+}
+
+.step:hover .step-img-wrap img {
+  transform: scale(1.05);
+  filter: saturate(1.0) brightness(1.0);
+}
+
+/* ============================================================
+   DESTINATIONS
+   ============================================================ */
+.destinations { background: var(--c-slate-50); }
+
+.destinations-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--space-10);
+  gap: var(--space-8);
+}
+
+/* Destinations photo strip */
+.dest-photo-strip {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  object-position: center 55%;
+  border-radius: var(--radius-xl);
+  margin-bottom: var(--space-10);
+  display: block;
+  box-shadow: var(--shadow-lg);
+  filter: saturate(0.92) brightness(0.97);
+}
+
+.dest-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--space-4);
+}
+
+.dest-card {
+  background: var(--c-white);
+  border: 1px solid var(--c-slate-300);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-4);
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--dur-normal) var(--ease);
+}
+
+.dest-card:hover {
+  background: var(--c-navy-900);
+  border-color: var(--c-navy-900);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.dest-card:hover .dest-name { color: var(--c-white); }
+.dest-card:hover .dest-time { color: var(--c-orange-400); }
+.dest-card:hover .dest-flag { transform: scale(1.2); }
+
+.dest-flag {
+  font-size: 32px;
+  margin-bottom: var(--space-2);
+  display: block;
+  transition: transform var(--dur-normal) var(--ease);
+}
+
+.dest-name {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--c-navy-900);
+  margin-bottom: var(--space-1);
+  transition: color var(--dur-fast) var(--ease);
+}
+
+.dest-time {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  transition: color var(--dur-fast) var(--ease);
+}
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+.testimonials { background: var(--c-white); }
+
+.testimonials-header {
+  text-align: center;
+  margin-bottom: var(--space-12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.testimonial-card {
+  background: var(--c-slate-50);
+  border: 1px solid var(--c-slate-300);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  position: relative;
+  transition: all var(--dur-normal) var(--ease);
+}
+
+.testimonial-card:hover {
+  background: var(--c-white);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.testimonial-quote-mark {
+  font-family: Georgia, serif;
+  font-size: 5rem;
+  line-height: 0.5;
+  color: var(--c-orange-600);
+  margin-bottom: var(--space-4);
+  display: block;
+  opacity: 0.4;
+}
+
+.testimonial-stars {
+  color: var(--c-orange-500);
+  font-size: var(--text-sm);
+  letter-spacing: 2px;
+  margin-bottom: var(--space-4);
+}
+
+.testimonial-text {
+  font-size: var(--text-base);
+  color: var(--c-slate-700);
+  line-height: 1.7;
+  margin-bottom: var(--space-6);
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--c-slate-300);
+}
+
+.testimonial-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--c-navy-800);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--c-white);
+  font-size: var(--text-sm);
+  flex-shrink: 0;
+}
+
+.testimonial-name {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 400;
+  color: var(--c-navy-900);
+  margin-bottom: 2px;
+  letter-spacing: 0.05em;
+  line-height: 1.0;
+}
+
+.testimonial-role {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.testimonial-verified {
+  margin-left: auto;
+  background: var(--c-orange-50);
+  border: 1px solid var(--c-orange-100);
+  color: var(--c-orange-600);
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+/* ============================================================
+   TRUST SECTION
+   ============================================================ */
+.trust-section {
+  background: var(--c-navy-950);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle port image behind trust section */
+.trust-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1400&q=70&auto=format&fit=crop') center/cover no-repeat;
+  filter: brightness(0.22) saturate(0.6);
+  z-index: 0;
+}
+
+.trust-section .container { position: relative; z-index: 1; }
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+  margin-bottom: var(--space-16);
+}
+
+.trust-item {
+  text-align: center;
+  padding: var(--space-8) var(--space-6);
+  background: rgba(255,255,255,0.05);
+  border-radius: var(--radius-xl);
+  transition: background var(--dur-normal) var(--ease);
+}
+
+.trust-item:hover { background: rgba(255,255,255,0.09); }
+
+.trust-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-4);
+  display: block;
+}
+
+.trust-title {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--c-white);
+  margin-bottom: var(--space-2);
+}
+
+.trust-desc {
+  font-size: var(--text-sm);
+  color: var(--c-navy-100);
+  line-height: 1.6;
+}
+
+.partner-logos {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: var(--space-12);
+  text-align: center;
+}
+
+.partner-logos-label {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-navy-100);
+  opacity: 0.5;
+  margin-bottom: var(--space-6);
+}
+
+.partner-logos-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-10);
+}
+
+.partner-logo {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 800;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: -0.02em;
+  transition: color var(--dur-normal) var(--ease);
+}
+
+.partner-logo:hover { color: rgba(255,255,255,0.5); }
+
+/* ============================================================
+   CTA SECTION
+   ============================================================ */
+.cta-section {
+  background: var(--c-orange-500);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.cta-section .container { position: relative; z-index: 1; }
+
+.cta-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+.cta-title {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-4xl), 6vw, 5.5rem);
+  font-weight: 400;
+  color: var(--c-white);
+  line-height: 1.0;
+  letter-spacing: 0.04em;
+  margin-bottom: var(--space-4);
+}
+
+.cta-sub {
+  font-size: var(--text-lg);
+  color: rgba(255,255,255,0.8);
+  line-height: 1.6;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: var(--space-4);
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.btn-white {
+  background: var(--c-white);
+  color: var(--c-orange-600);
+  border-color: var(--c-white);
+}
+.btn-white:hover { background: var(--c-slate-50); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+
+.btn-ghost {
+  background: rgba(255,255,255,0.15);
+  color: var(--c-white);
+  border-color: rgba(255,255,255,0.4);
+}
+.btn-ghost:hover { background: rgba(255,255,255,0.25); }
+
+/* ============================================================
+   FAQ SECTION
+   ============================================================ */
+.faq-section { background: var(--c-white); }
+
+.faq-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-16);
+  align-items: flex-start;
+}
+
+.faq-sidebar { position: sticky; top: 100px; }
+
+.faq-list { display: flex; flex-direction: column; gap: var(--space-3); }
+
+.faq-item {
+  border: 1px solid var(--c-slate-300);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color var(--dur-fast) var(--ease);
+}
+
+.faq-item.open { border-color: var(--c-navy-600); }
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-5) var(--space-6);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  gap: var(--space-4);
+}
+
+.faq-q-text {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  color: var(--c-navy-900);
+  letter-spacing: 0.04em;
+  line-height: 1.0;
+}
+
+.faq-toggle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--c-slate-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--dur-normal) var(--ease);
+  font-size: 18px;
+  color: var(--c-slate-700);
+  font-weight: 300;
+  line-height: 1;
+}
+
+.faq-item.open .faq-toggle {
+  background: var(--c-orange-600);
+  color: var(--c-white);
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--dur-slow) var(--ease-out);
+}
+
+.faq-item.open .faq-answer { max-height: 300px; }
+
+.faq-answer-inner {
+  padding: 0 var(--space-6) var(--space-5);
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  border-top: 1px solid var(--c-slate-100);
+  padding-top: var(--space-4);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  background: var(--c-navy-900);
+  padding: var(--space-20) 0 var(--space-8);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: var(--space-12);
+  margin-bottom: var(--space-12);
+}
+
+.footer-brand-tagline {
+  font-size: var(--text-sm);
+  color: var(--c-navy-100);
+  opacity: 0.6;
+  line-height: 1.7;
+  margin: var(--space-4) 0 var(--space-6);
+  max-width: 32ch;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--c-navy-100);
+  opacity: 0.7;
+  margin-bottom: var(--space-2);
+}
+
+.footer-col-title {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-orange-400);
+  margin-bottom: var(--space-5);
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer-links a {
+  font-size: var(--text-sm);
+  color: rgba(255,255,255,0.5);
+  transition: color var(--dur-fast) var(--ease);
+}
+
+.footer-links a:hover { color: var(--c-white); }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: var(--space-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.footer-copy {
+  font-size: var(--text-sm);
+  color: rgba(255,255,255,0.3);
+}
+
+.footer-legal {
+  display: flex;
+  gap: var(--space-6);
+}
+
+.footer-legal a {
+  font-size: var(--text-sm);
+  color: rgba(255,255,255,0.3);
+  transition: color var(--dur-fast) var(--ease);
+}
+.footer-legal a:hover { color: rgba(255,255,255,0.7); }
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+.animate-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--dur-slow) var(--ease-out), transform var(--dur-slow) var(--ease-out);
+}
+
+.animate-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-in[data-delay="1"] { transition-delay: 100ms; }
+.animate-in[data-delay="2"] { transition-delay: 200ms; }
+.animate-in[data-delay="3"] { transition-delay: 300ms; }
+.animate-in[data-delay="4"] { transition-delay: 400ms; }
+.animate-in[data-delay="5"] { transition-delay: 500ms; }
+.animate-in[data-delay="6"] { transition-delay: 600ms; }
+
+/* Counter animation */
+.counter { display: inline-block; }
+
+/* ============================================================
+   FLOATING CTA
+   ============================================================ */
+.floating-cta {
+  position: fixed;
+  bottom: var(--space-6);
+  right: var(--space-6);
+  z-index: 50;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all var(--dur-normal) var(--ease);
+  pointer-events: none;
+}
+
+.floating-cta.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.floating-cta-btn {
+  background: var(--c-orange-600);
+  color: var(--c-white);
+  border: none;
+  border-radius: var(--radius-full);
+  padding: 14px 24px;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 32px rgba(232,67,10,0.45);
+  transition: all var(--dur-normal) var(--ease);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.floating-cta-btn:hover { background: var(--c-orange-500); transform: scale(1.04); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .dest-grid { grid-template-columns: repeat(3, 1fr); }
+  .trust-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .cta-inner { grid-template-columns: 1fr; }
+  .stats-layout { grid-template-columns: 1fr; }
+  .faq-layout { grid-template-columns: 1fr; }
+  .faq-sidebar { position: static; }
+}
+
+@media (max-width: 768px) {
+  .hero-grid-layout { grid-template-columns: 1fr; gap: var(--space-10); }
+  .hero-content { padding-top: 100px; }
+  .nav-links, .nav-cta { display: none; }
+  .nav-mobile-toggle { display: flex; }
+  .form-row { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; }
+  .steps-grid { grid-template-columns: 1fr 1fr; }
+  .steps-grid::before { display: none; }
+  .dest-grid { grid-template-columns: repeat(2, 1fr); }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .trust-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: var(--space-8); }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .destinations-header { flex-direction: column; align-items: flex-start; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .steps-grid { grid-template-columns: 1fr; }
+  .dest-grid { grid-template-columns: repeat(2, 1fr); }
+  .trust-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <div class="nav-logo-icon">🚢</div>
+        S<span>&amp;</span>L
+      </a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#destinations">Destinations</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="#quote" class="btn btn-primary" style="padding: 10px 22px; font-size: 0.8125rem;">Get a Free Quote</a>
+      </div>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="nav-mobile-menu" id="mobileMenu">
+  <button class="nav-mobile-close" id="mobileClose">✕</button>
+  <a href="#services" onclick="closeMobileMenu()">Services</a>
+  <a href="#how" onclick="closeMobileMenu()">How It Works</a>
+  <a href="#destinations" onclick="closeMobileMenu()">Destinations</a>
+  <a href="#testimonials" onclick="closeMobileMenu()">Reviews</a>
+  <a href="#quote" onclick="closeMobileMenu()" style="color: var(--c-orange-400);">Get a Quote</a>
+</div>
+
+<!-- ============================================================
+     HERO SECTION
+     ============================================================ -->
+<section class="hero" id="quote">
+  <!-- Real photo background -->
+  <div class="hero-photo">
+    <img
+      src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=1920&q=85&auto=format&fit=crop"
+      alt="Container ship at sea"
+      loading="eager"
+    >
+  </div>
+
+  <div class="hero-grid"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-orb hero-orb-3"></div>
+
+  <!-- SVG Route Lines -->
+  <svg class="hero-route-lines" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice">
+    <path d="M 0 400 Q 360 200 720 400 Q 1080 600 1440 400" stroke="rgba(232,67,10,0.5)" stroke-width="1.5" fill="none" stroke-dasharray="8 6"/>
+    <path d="M 0 300 Q 480 100 960 350 Q 1200 475 1440 300" stroke="rgba(255,255,255,0.3)" stroke-width="1" fill="none" stroke-dasharray="4 8"/>
+    <path d="M 200 600 Q 600 400 1000 550 Q 1200 620 1440 550" stroke="rgba(26,58,130,0.6)" stroke-width="1.5" fill="none" stroke-dasharray="6 6"/>
+    <circle cx="100" cy="400" r="4" fill="rgba(232,67,10,0.7)"/>
+    <circle cx="720" cy="400" r="4" fill="rgba(232,67,10,0.7)"/>
+    <circle cx="1340" cy="400" r="4" fill="rgba(232,67,10,0.7)"/>
+    <circle cx="200" cy="600" r="3" fill="rgba(255,255,255,0.4)"/>
+    <circle cx="960" cy="350" r="3" fill="rgba(255,255,255,0.4)"/>
+  </svg>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-grid-layout">
+
+        <!-- Left: Copy -->
+        <div>
+          <div class="hero-eyebrow">
+            <div class="hero-eyebrow-line"></div>
+            <span class="hero-eyebrow-text">International Freight & Logistics</span>
+          </div>
+          <h1 class="hero-title">
+            Ship Anywhere.
+            <em>Delivered.</em>
+          </h1>
+          <p class="hero-body">
+            Fast, reliable international shipping for businesses of all sizes. Sea, air and road freight with real-time tracking — your cargo, our expertise.
+          </p>
+          <div class="hero-trust-badges">
+            <div class="trust-badge">
+              <svg class="trust-badge-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              150+ Countries
+            </div>
+            <div class="trust-badge">
+              <svg class="trust-badge-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Free Quotes in 2hrs
+            </div>
+            <div class="trust-badge">
+              <svg class="trust-badge-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Customs Managed
+            </div>
+            <div class="trust-badge">
+              <svg class="trust-badge-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              24/7 UK Support
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Quote Form -->
+        <div class="quote-card" id="quote-form">
+          <div class="quote-card-header">
+            <span class="quote-card-title">Get Your Free Quote</span>
+            <span class="quote-card-badge">⚡ 2hr Response</span>
+          </div>
+          <form class="quote-form" onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="fname">First Name</label>
+                <input type="text" id="fname" class="form-input" placeholder="James" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="lname">Last Name</label>
+                <input type="text" id="lname" class="form-input" placeholder="Smith">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Business Email</label>
+              <input type="email" id="email" class="form-input" placeholder="james@company.co.uk" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="phone">Phone Number</label>
+              <input type="tel" id="phone" class="form-input" placeholder="+44 20 0000 0000">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="origin">Origin Country</label>
+                <div class="form-select-wrap">
+                  <select id="origin" class="form-select" required>
+                    <option value="">Select origin</option>
+                    <option value="UK">🇬🇧 United Kingdom</option>
+                    <option value="DE">🇩🇪 Germany</option>
+                    <option value="FR">🇫🇷 France</option>
+                    <option value="NL">🇳🇱 Netherlands</option>
+                    <option value="PL">🇵🇱 Poland</option>
+                    <option value="ES">🇪🇸 Spain</option>
+                    <option value="IT">🇮🇹 Italy</option>
+                    <option value="OTHER">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="dest">Destination</label>
+                <div class="form-select-wrap">
+                  <select id="dest" class="form-select" required>
+                    <option value="">Select destination</option>
+                    <option value="US">🇺🇸 USA</option>
+                    <option value="CN">🇨🇳 China</option>
+                    <option value="AE">🇦🇪 UAE</option>
+                    <option value="AU">🇦🇺 Australia</option>
+                    <option value="IN">🇮🇳 India</option>
+                    <option value="SG">🇸🇬 Singapore</option>
+                    <option value="CA">🇨🇦 Canada</option>
+                    <option value="JP">🇯🇵 Japan</option>
+                    <option value="BR">🇧🇷 Brazil</option>
+                    <option value="OTHER">Other</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="freight">Freight Type</label>
+                <div class="form-select-wrap">
+                  <select id="freight" class="form-select">
+                    <option value="">Select type</option>
+                    <option>🚢 Sea Freight (FCL)</option>
+                    <option>📦 Sea Freight (LCL)</option>
+                    <option>✈️ Air Freight</option>
+                    <option>🚛 Road Freight</option>
+                    <option>🔀 Multimodal</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="weight">Est. Weight (kg)</label>
+                <input type="text" id="weight" class="form-input" placeholder="e.g. 500">
+              </div>
+            </div>
+            <div class="form-group full">
+              <label class="form-label" for="cargo">Cargo Description</label>
+              <input type="text" id="cargo" class="form-input" placeholder="e.g. Electronic components, palletised">
+            </div>
+            <button type="submit" class="quote-submit btn-lg">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Request My Free Quote
+            </button>
+          </form>
+          <div class="quote-footer">
+            <div class="quote-footer-item">
+              <span class="quote-footer-icon">✓</span>
+              No obligation
+            </div>
+            <div class="quote-footer-item">
+              <span class="quote-footer-icon">✓</span>
+              Response within 2 hours
+            </div>
+            <div class="quote-footer-item">
+              <span class="quote-footer-icon">✓</span>
+              GDPR compliant
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STATS TICKER
+     ============================================================ -->
+<div class="stats-ticker" aria-label="Key statistics">
+  <div class="ticker-track">
+    <!-- Doubled for seamless loop -->
+    <div class="ticker-item">
+      <div class="ticker-stat"><span class="ticker-num">50,000+</span><span class="ticker-label">Shipments Delivered</span></div>
+      <span class="ticker-sep">·</span>
+      <div class="ticker-stat"><span class="ticker-num">150+</span><span class="ticker-label">Countries Served</span></div>
+      <span class="ticker-sep">·</span>
+      <div class="ticker-stat"><span class="ticker-num">98.4%</span><span class="ticker-label">On-Time Delivery</span></div>
+      <span class="ticker-sep">·</span>
+      <div class="ticker-stat"><span class="ticker-num">£2.1bn</span><span class="ticker-label">Cargo Value Moved</span></div>
+      <span class="ticker-sep">·</span>
+      <div class="ticker-stat"><span class="ticker-num">4.9★</span><span class="ticker-label">Client Rating</span></div>
+      <span class="ticker-sep">·</span>
+      <div class="ticker-stat"><span class="ticker-num">24/7</span><span class="ticker-label">UK Support Team</span></div>
+      <span class="ticker-sep">·</span>
+    </div>
+    <div class="ticker-item">
+      <div class="ticker-stat"><span class="ticker-num">50,000+</span><span class="ticker-label">Shipments Delivered</span></div>
+      <span class="ticker-sep">·</span>
+      <div class="ticker-stat"><span class="ticker-num">150+</span><span class="ticker-label">Countries Served</span></div>
+      <span class="ticker-sep">·</span>
+      <div class="ticker-stat"><span class="ticker-num">98.4%</span><span class="ticker-label">On-Time Delivery</span></div>
+      <span class="ticker-sep">·</span>
+      <div class="ticker-stat"><span class="ticker-num">£2.1bn</span><span class="ticker-label">Cargo Value Moved</span></div>
+      <span class="ticker-sep">·</span>
+      <div class="ticker-stat"><span class="ticker-num">4.9★</span><span class="ticker-label">Client Rating</span></div>
+      <span class="ticker-sep">·</span>
+      <div class="ticker-stat"><span class="ticker-num">24/7</span><span class="ticker-label">UK Support Team</span></div>
+      <span class="ticker-sep">·</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SERVICES
+     ============================================================ -->
+<section class="services section-pad" id="services">
+  <div class="container">
+    <div class="services-header">
+      <span class="label-tag">Our Services</span>
+      <h2 class="section-heading animate-in">Every mode.<br>Every route.</h2>
+      <p class="section-sub animate-in" data-delay="1">End-to-end freight solutions tailored to your business — from a single pallet to full container loads.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card animate-in" data-delay="1">
+        <div class="service-card-img-wrap"><img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=75&auto=format&fit=crop" alt="Container ship at sea" loading="lazy"></div>
+        <div class="service-icon">🚢</div>
+        <h3 class="service-title">Sea Freight</h3>
+        <p class="service-desc">Cost-effective FCL and LCL ocean freight to every major port worldwide. Full customs documentation and port-to-door delivery included.</p>
+        <a href="#quote" class="service-link">Get a sea freight quote →</a>
+      </div>
+      <div class="service-card animate-in" data-delay="2">
+        <div class="service-card-img-wrap"><img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&q=75&auto=format&fit=crop" alt="Cargo aircraft in flight" loading="lazy"></div>
+        <div class="service-icon">✈️</div>
+        <h3 class="service-title">Air Freight</h3>
+        <p class="service-desc">When time is critical, our air freight solutions deliver. Express and standard options with handling at all major international airports.</p>
+        <a href="#quote" class="service-link">Get an air freight quote →</a>
+      </div>
+      <div class="service-card animate-in" data-delay="3">
+        <div class="service-card-img-wrap"><img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&q=75&auto=format&fit=crop" alt="Road freight truck on motorway" loading="lazy"></div>
+        <div class="service-icon">🚛</div>
+        <h3 class="service-title">Road Freight</h3>
+        <p class="service-desc">Reliable full and part-load road freight throughout Europe. Dedicated vehicles and groupage services with real-time GPS tracking.</p>
+        <a href="#quote" class="service-link">Get a road freight quote →</a>
+      </div>
+      <div class="service-card animate-in" data-delay="4">
+        <div class="service-card-img-wrap"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=75&auto=format&fit=crop" alt="Customs documentation paperwork" loading="lazy"></div>
+        <div class="service-icon">📋</div>
+        <h3 class="service-title">Customs Clearance</h3>
+        <p class="service-desc">Expert customs brokerage handling import and export declarations, tariff classification, and full compliance documentation.</p>
+        <a href="#quote" class="service-link">Learn about customs →</a>
+      </div>
+      <div class="service-card animate-in" data-delay="5">
+        <div class="service-card-img-wrap"><img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&q=75&auto=format&fit=crop" alt="UK warehouse with pallets" loading="lazy"></div>
+        <div class="service-icon">📦</div>
+        <h3 class="service-title">Warehousing</h3>
+        <p class="service-desc">UK-based bonded and non-bonded warehousing with pick-and-pack fulfilment, stock management and next-day dispatch.</p>
+        <a href="#quote" class="service-link">Explore warehousing →</a>
+      </div>
+      <div class="service-card animate-in" data-delay="6">
+        <div class="service-card-img-wrap"><img src="https://images.unsplash.com/photo-1569396116180-210c182bedb8?w=600&q=75&auto=format&fit=crop" alt="Global shipping network" loading="lazy"></div>
+        <div class="service-icon">🔀</div>
+        <h3 class="service-title">Multimodal</h3>
+        <p class="service-desc">Optimised multi-mode solutions combining sea, air, and road to balance cost and speed. We manage the complexity, you get results.</p>
+        <a href="#quote" class="service-link">Explore multimodal →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STATS COUNTERS
+     ============================================================ -->
+<section class="stats-section section-pad" id="stats">
+  <div class="container">
+    <div class="stats-layout">
+      <div class="stats-left">
+        <span class="label-tag--light label-tag animate-in">By The Numbers</span>
+        <h2 class="section-heading section-heading--light animate-in" data-delay="1">Trusted by UK businesses<br>since 2008.</h2>
+        <p class="section-sub section-sub--light animate-in" data-delay="2">We've built our reputation on transparency, reliability, and doing what we say we'll do.</p>
+        <div class="animate-in" data-delay="3">
+          <a href="#quote" class="btn btn-primary btn-lg" style="margin-top: var(--space-6);">Get Your Free Quote</a>
+        </div>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-block animate-in" data-delay="1">
+          <div class="stat-num"><span class="counter" data-target="50000" data-suffix="+">0</span></div>
+          <div class="stat-label">Successful Shipments</div>
+        </div>
+        <div class="stat-block animate-in" data-delay="2">
+          <div class="stat-num"><span class="counter" data-target="150" data-suffix="+">0</span></div>
+          <div class="stat-label">Countries & Territories</div>
+        </div>
+        <div class="stat-block animate-in" data-delay="3">
+          <div class="stat-num"><span class="counter" data-target="98" data-suffix=".4%">0</span></div>
+          <div class="stat-label">On-Time Delivery Rate</div>
+        </div>
+        <div class="stat-block animate-in" data-delay="4">
+          <div class="stat-num"><span class="counter" data-target="16" data-suffix=" yrs">0</span></div>
+          <div class="stat-label">Years in Business</div>
+        </div>
+        <div class="stat-block animate-in" data-delay="5">
+          <div class="stat-num"><span class="counter" data-target="4200" data-prefix="">0</span><span style="color:var(--c-orange-400)">+</span></div>
+          <div class="stat-label">Active Business Clients</div>
+        </div>
+        <div class="stat-block animate-in" data-delay="6">
+          <div class="stat-num"><span style="color:var(--c-orange-400)">4.9</span><span style="color:var(--c-white); font-size:2rem;">★</span></div>
+          <div class="stat-label">Average Client Rating</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     HOW IT WORKS
+     ============================================================ -->
+<section class="how-it-works section-pad" id="how">
+  <div class="container">
+    <div class="how-header">
+      <span class="label-tag">Simple Process</span>
+      <h2 class="section-heading animate-in">From quote to delivery<br>in four steps.</h2>
+      <p class="section-sub animate-in" data-delay="1" style="text-align:center; margin: 0 auto;">We've removed the complexity from international freight so you can focus on your business.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step animate-in" data-delay="1">
+        <div class="step-img-wrap"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&q=75&auto=format&fit=crop" alt="Getting a shipping quote online" loading="lazy"></div>
+        <div class="step-num">1</div>
+        <h3 class="step-title">Request a Quote</h3>
+        <p class="step-desc">Fill in our quick form with your cargo details. We'll respond with a competitive, all-inclusive quote within 2 hours.</p>
+      </div>
+      <div class="step animate-in" data-delay="2">
+        <div class="step-img-wrap"><img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&q=75&auto=format&fit=crop" alt="Business booking confirmation" loading="lazy"></div>
+        <div class="step-num">2</div>
+        <h3 class="step-title">Book &amp; Confirm</h3>
+        <p class="step-desc">Accept your quote and our dedicated team will take over, booking cargo space and issuing all shipping documentation.</p>
+      </div>
+      <div class="step animate-in" data-delay="3">
+        <div class="step-img-wrap"><img src="https://images.unsplash.com/photo-1605745341112-85968b19335b?w=400&q=75&auto=format&fit=crop" alt="Freight being loaded at port" loading="lazy"></div>
+        <div class="step-num">3</div>
+        <h3 class="step-title">We Handle It All</h3>
+        <p class="step-desc">We collect, pack if needed, clear customs and load your cargo. You get live updates every step of the way.</p>
+      </div>
+      <div class="step animate-in" data-delay="4">
+        <div class="step-img-wrap"><img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=400&q=75&auto=format&fit=crop" alt="Delivery truck arriving at destination" loading="lazy"></div>
+        <div class="step-num">4</div>
+        <h3 class="step-title">Delivered</h3>
+        <p class="step-desc">Your cargo is delivered to the door, with a full proof-of-delivery and invoice. It really is that simple.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DESTINATIONS
+     ============================================================ -->
+<section class="destinations section-pad" id="destinations">
+  <div class="container">
+    <div class="destinations-header">
+      <div>
+        <span class="label-tag">Global Reach</span>
+        <h2 class="section-heading animate-in" style="margin-top: var(--space-3);">150+ Countries.<br>One partner.</h2>
+      </div>
+      <p class="section-sub animate-in" data-delay="1" style="max-width: 36ch;">Our most popular international shipping routes — click any destination for an instant quote.</p>
+    </div>
+    <img
+      class="dest-photo-strip animate-in"
+      src="https://images.unsplash.com/photo-1524522173746-f628baad3644?w=1400&q=80&auto=format&fit=crop"
+      alt="Aerial view of global shipping port with containers"
+      loading="lazy"
+    >
+    <div class="dest-grid">
+      <div class="dest-card animate-in" data-delay="1" onclick="prefillDest('US')"><span class="dest-flag">🇺🇸</span><div class="dest-name">USA</div><div class="dest-time">5–9 days air</div></div>
+      <div class="dest-card animate-in" data-delay="1" onclick="prefillDest('CN')"><span class="dest-flag">🇨🇳</span><div class="dest-name">China</div><div class="dest-time">20–30 days sea</div></div>
+      <div class="dest-card animate-in" data-delay="2" onclick="prefillDest('AE')"><span class="dest-flag">🇦🇪</span><div class="dest-name">UAE</div><div class="dest-time">10–16 days sea</div></div>
+      <div class="dest-card animate-in" data-delay="2" onclick="prefillDest('AU')"><span class="dest-flag">🇦🇺</span><div class="dest-name">Australia</div><div class="dest-time">25–35 days sea</div></div>
+      <div class="dest-card animate-in" data-delay="3" onclick="prefillDest('IN')"><span class="dest-flag">🇮🇳</span><div class="dest-name">India</div><div class="dest-time">18–25 days sea</div></div>
+      <div class="dest-card animate-in" data-delay="3" onclick="prefillDest('SG')"><span class="dest-flag">🇸🇬</span><div class="dest-name">Singapore</div><div class="dest-time">22–28 days sea</div></div>
+      <div class="dest-card animate-in" data-delay="4" onclick="prefillDest('CA')"><span class="dest-flag">🇨🇦</span><div class="dest-name">Canada</div><div class="dest-time">8–12 days air</div></div>
+      <div class="dest-card animate-in" data-delay="4" onclick="prefillDest('JP')"><span class="dest-flag">🇯🇵</span><div class="dest-name">Japan</div><div class="dest-time">25–32 days sea</div></div>
+      <div class="dest-card animate-in" data-delay="5" onclick="prefillDest('BR')"><span class="dest-flag">🇧🇷</span><div class="dest-name">Brazil</div><div class="dest-time">28–38 days sea</div></div>
+      <div class="dest-card animate-in" data-delay="5" onclick="prefillDest('OTHER')"><span class="dest-flag">🇿🇦</span><div class="dest-name">South Africa</div><div class="dest-time">20–28 days sea</div></div>
+      <div class="dest-card animate-in" data-delay="6" onclick="prefillDest('OTHER')"><span class="dest-flag">🇰🇷</span><div class="dest-name">South Korea</div><div class="dest-time">24–30 days sea</div></div>
+      <div class="dest-card animate-in" data-delay="6" onclick="prefillDest('OTHER')" style="background: var(--c-navy-900); border-color: var(--c-navy-900); cursor:pointer;">
+        <span class="dest-flag">🌍</span>
+        <div class="dest-name" style="color:var(--c-white)">150+ More</div>
+        <div class="dest-time" style="color:var(--c-orange-400)">Get a quote →</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TESTIMONIALS
+     ============================================================ -->
+<section class="testimonials section-pad" id="testimonials">
+  <div class="container">
+    <div class="testimonials-header">
+      <span class="label-tag">Client Reviews</span>
+      <h2 class="section-heading animate-in">4,200+ businesses trust us<br>with their cargo.</h2>
+      <p class="section-sub animate-in" data-delay="1" style="text-align:center; margin: 0 auto;">Don't take our word for it. Here's what our clients say.</p>
+    </div>
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card animate-in" data-delay="1">
+        <span class="testimonial-quote-mark">"</span>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">We've been shipping automotive parts to the Middle East for three years through S&L. Their customs expertise has saved us from delays that would have cost us contracts. Absolute professionals.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">RH</div>
+          <div>
+            <div class="testimonial-name">Richard Hargreaves</div>
+            <div class="testimonial-role">Head of Procurement, AutoTech UK</div>
+          </div>
+          <span class="testimonial-verified">✓ Verified</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card animate-in" data-delay="2">
+        <span class="testimonial-quote-mark">"</span>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">The online quote form is brilliant — had a competitive price back in under an hour. Switched from our old broker and saved 22% on our monthly freight costs. Wish we'd found them sooner.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" style="background:var(--c-orange-600)">SC</div>
+          <div>
+            <div class="testimonial-name">Sarah Chen</div>
+            <div class="testimonial-role">Operations Director, Lumex Furniture</div>
+          </div>
+          <span class="testimonial-verified">✓ Verified</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card animate-in" data-delay="3">
+        <span class="testimonial-quote-mark">"</span>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">As a growing e-commerce brand we need a logistics partner who can scale with us. S&L handled our Black Friday surge without a single late delivery. Extraordinary reliability.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" style="background:var(--c-navy-600)">MP</div>
+          <div>
+            <div class="testimonial-name">Marcus Patel</div>
+            <div class="testimonial-role">CEO, UrbanKit London</div>
+          </div>
+          <span class="testimonial-verified">✓ Verified</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card animate-in" data-delay="4">
+        <span class="testimonial-quote-mark">"</span>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">The tracking portal is miles ahead of competitors. Our customers can see exactly where their order is, which has dramatically reduced our customer service overhead. Huge added value.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" style="background:var(--c-success)">JT</div>
+          <div>
+            <div class="testimonial-name">Jessica Thompson</div>
+            <div class="testimonial-role">Logistics Manager, Nordic Wellness</div>
+          </div>
+          <span class="testimonial-verified">✓ Verified</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card animate-in" data-delay="5">
+        <span class="testimonial-quote-mark">"</span>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">Post-Brexit export documentation was a nightmare until we found S&L. Their compliance team handles everything. We've had zero customs rejections since partnering with them in 2021.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" style="background:#6B48CC">DW</div>
+          <div>
+            <div class="testimonial-name">David Walsh</div>
+            <div class="testimonial-role">MD, Walsh Industrial Supplies</div>
+          </div>
+          <span class="testimonial-verified">✓ Verified</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card animate-in" data-delay="6">
+        <span class="testimonial-quote-mark">"</span>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">Their 24/7 support line is genuinely 24/7 — not an answering service. At 2am when a customs query threatened to hold our shipment, their team sorted it immediately. Priceless.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" style="background:#C4302B">AB</div>
+          <div>
+            <div class="testimonial-name">Amara Balogun</div>
+            <div class="testimonial-role">Supply Chain Lead, MedEquip Global</div>
+          </div>
+          <span class="testimonial-verified">✓ Verified</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TRUST / WHY US
+     ============================================================ -->
+<section class="trust-section section-pad">
+  <div class="container">
+    <div style="text-align:center; margin-bottom: var(--space-12);">
+      <span class="label-tag label-tag--light animate-in">Why S&L</span>
+      <h2 class="section-heading section-heading--light animate-in" data-delay="1" style="margin-top: var(--space-4);">Built on trust.<br>Proven by results.</h2>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-item animate-in" data-delay="1">
+        <span class="trust-icon">🔒</span>
+        <div class="trust-title">Cargo Insurance</div>
+        <p class="trust-desc">All shipments covered up to £2m with optional all-risk insurance. Your goods are protected end-to-end.</p>
+      </div>
+      <div class="trust-item animate-in" data-delay="2">
+        <span class="trust-icon">📡</span>
+        <div class="trust-title">Live Tracking</div>
+        <p class="trust-desc">Real-time GPS and port status updates via our client portal and mobile app. Know where your cargo is, always.</p>
+      </div>
+      <div class="trust-item animate-in" data-delay="3">
+        <span class="trust-icon">🏛️</span>
+        <div class="trust-title">HMRC Authorised</div>
+        <p class="trust-desc">Fully authorised HMRC customs agent. AEO certified. Trusted operator status for expedited border clearance.</p>
+      </div>
+      <div class="trust-item animate-in" data-delay="4">
+        <span class="trust-icon">♻️</span>
+        <div class="trust-title">Carbon Neutral</div>
+        <p class="trust-desc">We offset 100% of scope 1 & 2 emissions. Choose green freight options with full carbon reporting on every shipment.</p>
+      </div>
+    </div>
+    <div class="partner-logos animate-in">
+      <div class="partner-logos-label">Accreditations & Partners</div>
+      <div class="partner-logos-row">
+        <span class="partner-logo">BIFA</span>
+        <span class="partner-logo">IATA</span>
+        <span class="partner-logo">AEO</span>
+        <span class="partner-logo">FIATA</span>
+        <span class="partner-logo">ISO 9001</span>
+        <span class="partner-logo">Lloyds</span>
+        <span class="partner-logo">HMRC</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CTA SECTION
+     ============================================================ -->
+<section class="cta-section section-pad">
+  <div class="container">
+    <div class="cta-inner">
+      <div>
+        <h2 class="cta-title animate-in">Ready to ship<br>smarter?</h2>
+        <p class="cta-sub animate-in" data-delay="1">Join 4,200+ UK businesses shipping internationally with confidence. Get your free, no-obligation quote in minutes.</p>
+      </div>
+      <div class="cta-buttons animate-in" data-delay="2">
+        <a href="#quote" class="btn btn-white btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Get a Free Quote
+        </a>
+        <a href="tel:+441234567890" class="btn btn-ghost btn-lg">
+          📞 Call: 01234 567 890
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAQ SECTION
+     ============================================================ -->
+<section class="faq-section section-pad" id="faq">
+  <div class="container">
+    <div class="faq-layout">
+      <div class="faq-sidebar">
+        <span class="label-tag animate-in">FAQ</span>
+        <h2 class="section-heading animate-in" data-delay="1" style="margin-top: var(--space-4);">Common questions answered.</h2>
+        <p class="section-sub animate-in" data-delay="2" style="margin-bottom: var(--space-8);">Can't find what you need? Our team is on hand 24/7.</p>
+        <a href="tel:+441234567890" class="btn btn-dark animate-in" data-delay="3">📞 Speak to an Expert</a>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-q-text">How quickly can I get a shipping quote?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">We guarantee a response to all quote requests within 2 business hours during weekdays, and within 4 hours at weekends. For urgent shipments, call our team directly for an instant quote over the phone.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-q-text">What is the minimum shipment size you handle?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">We handle everything from single parcels to full container loads (FCL). For international freight, our LCL (less than container load) sea freight service starts from as little as 50kg, making it cost-effective even for smaller businesses.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-q-text">Do you handle customs clearance and documentation?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">Yes — this is one of our core services. We are HMRC authorised customs agents and AEO certified. We prepare all export and import declarations, commercial invoices, packing lists, certificates of origin and any specialist documentation required for your cargo type.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-q-text">Can I track my shipment in real time?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">Absolutely. All clients receive access to our online tracking portal and mobile app. You can view the live location of your cargo, milestones (departure, port arrival, customs clearance, delivery), and download all shipping documents at any time.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-q-text">Is my cargo insured during transit?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">We offer comprehensive cargo insurance underwritten by Lloyd's of London. Basic coverage is included on all shipments up to £10,000, with full all-risk coverage available for higher value cargo. We'll recommend the right level of cover when we provide your quote.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-q-text">How do you handle restricted or hazardous goods?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">We are licensed to handle IMDG, IATA and ADR regulated goods. Our team includes certified dangerous goods specialists who can advise on correct classification, packaging, labelling and documentation. Please disclose the nature of any restricted cargo when requesting a quote.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-q-text">Do you offer collection from our UK premises?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">Yes. We offer door-to-door, door-to-port, port-to-door and port-to-port services. Our UK collection fleet covers all mainland UK postcodes, typically within 48 hours of booking. Scottish Highlands, Northern Ireland and islands may require additional lead time.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="nav-logo" style="margin-bottom: var(--space-4);">
+          <div class="nav-logo-icon">🚢</div>
+          Shipping<span>&amp;</span>Logistics
+        </div>
+        <p class="footer-brand-tagline">The UK's trusted international freight partner. Moving cargo across 150+ countries since 2008.</p>
+        <div class="footer-contact-item">📍 12 Port Road, Liverpool, L3 4AB</div>
+        <div class="footer-contact-item">📞 01234 567 890</div>
+        <div class="footer-contact-item">✉️ quotes@shippingandlogistics.co.uk</div>
+      </div>
+      <div>
+        <div class="footer-col-title">Services</div>
+        <ul class="footer-links">
+          <li><a href="#services">Sea Freight</a></li>
+          <li><a href="#services">Air Freight</a></li>
+          <li><a href="#services">Road Freight</a></li>
+          <li><a href="#services">Customs Clearance</a></li>
+          <li><a href="#services">Warehousing</a></li>
+          <li><a href="#services">Multimodal</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Accreditations</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">News & Insights</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Quick Quote</div>
+        <p style="font-size:var(--text-sm); color: rgba(255,255,255,0.5); margin-bottom: var(--space-5); line-height: 1.6;">Ready to ship? Get a competitive quote within 2 hours.</p>
+        <a href="#quote" class="btn btn-primary" style="display:inline-flex;">Get a Free Quote →</a>
+        <div style="margin-top: var(--space-8);">
+          <div class="footer-col-title">Follow Us</div>
+          <div style="display:flex; gap:var(--space-4); margin-top: var(--space-3);">
+            <a href="#" style="color:rgba(255,255,255,0.4); font-size:var(--text-sm); transition: color var(--dur-fast) var(--ease);" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">LinkedIn</a>
+            <a href="#" style="color:rgba(255,255,255,0.4); font-size:var(--text-sm); transition: color var(--dur-fast) var(--ease);" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">Twitter</a>
+            <a href="#" style="color:rgba(255,255,255,0.4); font-size:var(--text-sm); transition: color var(--dur-fast) var(--ease);" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">YouTube</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2024 ShippingAndLogistics.co.uk — All rights reserved.</div>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating CTA -->
+<div class="floating-cta" id="floatingCta">
+  <button class="floating-cta-btn" onclick="scrollToQuote()">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    Get Free Quote
+  </button>
+</div>
+
+<!-- Success Modal -->
+<div id="successModal" style="display:none; position:fixed; inset:0; z-index:200; background:rgba(9,20,40,0.75); align-items:center; justify-content:center; backdrop-filter:blur(4px);">
+  <div style="background:white; border-radius:var(--radius-xl); padding:var(--space-12); max-width:480px; width:90%; text-align:center; box-shadow:var(--shadow-xl);">
+    <div style="font-size:3rem; margin-bottom:var(--space-4);">🚢</div>
+    <h3 style="font-family:var(--font-display); font-size:var(--text-2xl); font-weight:800; color:var(--c-navy-900); margin-bottom:var(--space-3); letter-spacing:-0.02em;">Quote Request Sent!</h3>
+    <p style="color:var(--color-text-muted); line-height:1.6; margin-bottom:var(--space-8);">Thank you! Our team will review your requirements and send you a competitive quote within <strong>2 hours</strong>. Check your inbox — including spam, just in case.</p>
+    <button onclick="closeModal()" class="btn btn-primary btn-lg" style="width:100%; justify-content:center;">Close</button>
+  </div>
+</div>
+
+<script>
+// Nav scroll behaviour
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 80) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+});
+
+// Mobile menu
+const mobileToggle = document.getElementById('mobileToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+const mobileClose = document.getElementById('mobileClose');
+
+mobileToggle.addEventListener('click', () => mobileMenu.classList.add('open'));
+mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+
+function closeMobileMenu() { mobileMenu.classList.remove('open'); }
+
+// Animate on scroll
+const animateEls = document.querySelectorAll('.animate-in');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+animateEls.forEach(el => observer.observe(el));
+
+// Counter animation
+const counters = document.querySelectorAll('.counter');
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting && !e.target.dataset.done) {
+      e.target.dataset.done = 1;
+      const target = parseInt(e.target.dataset.target);
+      const suffix = e.target.dataset.suffix || '';
+      const duration = 2000;
+      const step = target / (duration / 16);
+      let current = 0;
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        e.target.textContent = Math.floor(current).toLocaleString('en-GB') + suffix;
+      }, 16);
+    }
+  });
+}, { threshold: 0.3 });
+counters.forEach(c => counterObserver.observe(c));
+
+// FAQ toggle
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const allItems = document.querySelectorAll('.faq-item');
+  allItems.forEach(i => { if (i !== item) i.classList.remove('open'); });
+  item.classList.toggle('open');
+}
+
+// Floating CTA visibility
+const floatingCta = document.getElementById('floatingCta');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 600) {
+    floatingCta.classList.add('visible');
+  } else {
+    floatingCta.classList.remove('visible');
+  }
+});
+
+function scrollToQuote() {
+  document.getElementById('quote').scrollIntoView({ behavior: 'smooth' });
+}
+
+// Prefill destination from dest cards
+function prefillDest(code) {
+  const destSelect = document.getElementById('dest');
+  if (destSelect) {
+    destSelect.value = code;
+    if (!destSelect.value) destSelect.value = 'OTHER';
+  }
+  document.getElementById('quote').scrollIntoView({ behavior: 'smooth' });
+  setTimeout(() => {
+    document.getElementById('email').focus();
+  }, 600);
+}
+
+// Form submit
+function handleSubmit(e) {
+  e.preventDefault();
+  const modal = document.getElementById('successModal');
+  modal.style.display = 'flex';
+}
+
+function closeModal() {
+  document.getElementById('successModal').style.display = 'none';
+  document.getElementById('quote-form').querySelector('form').reset();
+}
+
+// Close modal on backdrop click
+document.getElementById('successModal').addEventListener('click', (e) => {
+  if (e.target === e.currentTarget) closeModal();
+});
+</script>
+</body>
+</html>
